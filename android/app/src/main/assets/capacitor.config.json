@@ -1,0 +1,7 @@
+{
+  "appId": "com.vi8etestapp.recipebook",
+  "appName": "ionicapp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
