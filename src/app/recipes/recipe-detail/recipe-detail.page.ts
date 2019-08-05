@@ -25,24 +25,26 @@ export class RecipeDetailPage implements OnInit {
   }
 
   onDeleteRecipe() {
-    this.alertCtrl.create({
-      header: 'Delete Recipe', 
-      message: 'Are you sure you want to delete this item?',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        },
-        {
-          text: 'Delete',
-          handler: () => {
-            this.recipesService.deleteRecipe(this.loadedRecipe.id);
-            this.router.navigate(['/recipes']);
-          }
-        }
-      ]
-    }).then(el => {
-      el.present()
-    });
+    this.recipesService.deleteRecipe(this.loadedRecipe.id);
+    this.router.navigate(['/recipes']);
+    // this.alertCtrl.create({
+    //   header: 'Delete Recipe',
+    //   message: 'Are you sure you want to delete this item?',
+    //   buttons: [
+    //     {
+    //       text: 'Cancel',
+    //       role: 'cancel'
+    //     },
+    //     {
+    //       text: 'Delete',
+    //       handler: () => {
+    //         this.recipesService.deleteRecipe(this.loadedRecipe.id);
+    //         this.router.navigate(['/recipes']);
+    //       }
+    //     }
+    //   ]
+    // }).then(el => {
+    //   el.present();
+    // });
   }
 }
